@@ -1,0 +1,42 @@
+#btnGroup{
+    text-align: center;
+    width: 80%;
+    margin-top: 20px; 
+}
+
+#row{
+    padding-top: 80px;
+}
+
+#col-content{
+    align-items: center;
+    text-align: center;
+}
+
+#pass-word{
+    margin-bottom: 15px;
+}
+
+#bg{
+    background-image: url('../../assets/imgs/bg-login.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+#logo{
+    margin-bottom: 30px;
+}
+
+.item.item-input {
+    background-color: transparent;
+}
+
+#login-input{
+    color: #ffffff;
+}
+
+#eg-text{
+    font-size: 1.1rem;
+    color: white;
+    text-align: end;
+}
