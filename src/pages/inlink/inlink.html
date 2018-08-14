@@ -7,12 +7,288 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>inlink</ion-title>
+    <ion-title>Link ข้อมูลภายใน</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+  <!-- MA link -->
+  <ion-item>
+    <ion-label text-wrap>Maintanence Link
+      <ion-icon name="hammer"></ion-icon>
+    </ion-label>
+    <ion-toggle [(ngModel)]="maSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="maSta">
+    <ion-list *ngFor="let maLink of maLinks | async">
+      <a ion-item href="{{maLink.url}}" text-wrap>
+        <u>{{maLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- SMC link -->
+  <ion-item>
+    <ion-label text-wrap>ศูนย์จัดการยุทธศาสตร์องค์กร (SMC)</ion-label>
+    <ion-toggle [(ngModel)]="smcSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="smcSta">
+    <ion-list *ngFor="let smcLink of smcLinks | async">
+      <a ion-item href="{{smcLink.url}}" text-wrap>
+        <u>{{smcLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- nud link -->
+  <ion-item>
+    <ion-label text-wrap>โภชนาการ</ion-label>
+    <ion-toggle [(ngModel)]="nudSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="nudSta">
+    <ion-list *ngFor="let nudLink of nudLinks | async">
+      <a ion-item href="{{nudLink.url}}" text-wrap>
+        <u>{{nudLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- กายภาพ link -->
+  <ion-item>
+    <ion-label text-wrap>กายภาพ​บำบัด</ion-label>
+    <ion-toggle [(ngModel)]="ppSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="ppSta">
+    <ion-list *ngFor="let ppLink of ppLinks | async">
+      <a ion-item href="{{ppLink.url}}" text-wrap>
+        <u>{{ppLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- admission link -->
+  <ion-item>
+    <ion-label text-wrap>สิทธิประโยชน์</ion-label>
+    <ion-toggle [(ngModel)]="admisSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="admisSta">
+    <ion-list *ngFor="let admisLink of admisLinks | async">
+      <a ion-item href="{{admisLink.url}}" text-wrap>
+        <u>{{admisLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- A&E link -->
+  <ion-item>
+    <ion-label text-wrap>อุบัติเหตุ-ฉุกเฉิน (A&E)</ion-label>
+    <ion-toggle [(ngModel)]="aeSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="aeSta">
+    <ion-list *ngFor="let aeLink of aeLinks | async">
+      <a ion-item href="{{aeLink.url}}" text-wrap>
+        <u>{{aeLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- opd1 link -->
+  <ion-item>
+    <ion-label text-wrap>ผู้ป่วยนอก (ประกันสังคม OPD1)</ion-label>
+    <ion-toggle [(ngModel)]="opd1Sta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="opd1Sta">
+    <ion-list *ngFor="let opd1Link of opd1Links | async">
+      <a ion-item href="{{opd1Link.url}}" text-wrap>
+        <u>{{opd1Link.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- opd2 link -->
+  <ion-item>
+    <ion-label text-wrap>ผู้ป่วยนอก (Premium OPD2)</ion-label>
+    <ion-toggle [(ngModel)]="opd2Sta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="opd2Sta">
+    <ion-list *ngFor="let opd2Link of opd2Links | async">
+      <a ion-item href="{{opd2Link.url}}" text-wrap>
+        <u>{{opd2Link.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ช่าง link -->
+  <ion-item>
+    <ion-label text-wrap>ซ่อมบำรุง</ion-label>
+    <ion-toggle [(ngModel)]="manSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="manSta">
+    <ion-list *ngFor="let manLink of manLinks | async">
+      <a ion-item href="{{manLink.url}}" text-wrap>
+        <u>{{manLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- lnd link -->
+  <ion-item>
+    <ion-label text-wrap>ห้องคลอดและทารกแรกเกิด</ion-label>
+    <ion-toggle [(ngModel)]="lndSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="lndSta">
+    <ion-list *ngFor="let lndLink of lndLinks | async">
+      <a ion-item href="{{lndLink.url}}" text-wrap>
+        <u>{{lndLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- hr link -->
+  <ion-item>
+    <ion-label text-wrap>บริหารบุคลากร</ion-label>
+    <ion-toggle [(ngModel)]="hrSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="hrSta">
+    <ion-list *ngFor="let hrLink of hrLinks | async">
+      <a ion-item href="{{hrLink.url}}" text-wrap>
+        <u>{{hrLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- lab link -->
+  <ion-item>
+    <ion-label text-wrap>บริหารบุคลากร</ion-label>
+    <ion-toggle [(ngModel)]="labSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="labSta">
+    <ion-list *ngFor="let labLink of labLinks | async">
+      <a ion-item href="{{labLink.url}}" text-wrap>
+        <u>{{labLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- phar link -->
+  <ion-item>
+    <ion-label text-wrap>เภสัชกรรม</ion-label>
+    <ion-toggle [(ngModel)]="pharSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="pharSta">
+    <ion-list *ngFor="let pharLink of pharLinks | async">
+      <a ion-item href="{{pharLink.url}}" text-wrap>
+        <u>{{pharLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ward5 link -->
+  <ion-item>
+    <ion-label text-wrap>Ward 5</ion-label>
+    <ion-toggle [(ngModel)]="ward5Sta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="ward5Sta">
+    <ion-list *ngFor="let ward5Link of ward5Links | async">
+      <a ion-item href="{{ward5Link.url}}" text-wrap>
+        <u>{{ward5Link.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ems link -->
+  <ion-item>
+    <ion-label text-wrap>รับ-ส่งผู้ป่วย</ion-label>
+    <ion-toggle [(ngModel)]="emsSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="emsSta">
+    <ion-list *ngFor="let emsLink of emsLinks | async">
+      <a ion-item href="{{emsLink.url}}" text-wrap>
+        <u>{{emsLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- icu link -->
+  <ion-item>
+    <ion-label text-wrap>ห้องผู้ป่วยหนัก (ICU)</ion-label>
+    <ion-toggle [(ngModel)]="icuSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="icuSta">
+    <ion-list *ngFor="let icuLink of icuLinks | async">
+      <a ion-item href="{{icuLink.url}}" text-wrap>
+        <u>{{icuLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- pcu link -->
+  <ion-item>
+    <ion-label text-wrap>หน่วยบริการปฐมภูมิ</ion-label>
+    <ion-toggle [(ngModel)]="pcuSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="pcuSta">
+    <ion-list *ngFor="let pcuLink of pcuLinks | async">
+      <a ion-item href="{{pcuLink.url}}" text-wrap>
+        <u>{{pcuLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- xray link -->
+  <ion-item>
+    <ion-label text-wrap>รังสีวิทยา (X-ray)</ion-label>
+    <ion-toggle [(ngModel)]="xraySta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="xraySta">
+    <ion-list *ngFor="let xrayLink of xrayLinks | async">
+      <a ion-item href="{{xrayLink.url}}" text-wrap>
+        <u>{{xrayLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ward3 link -->
+  <ion-item>
+    <ion-label text-wrap>Ward 3</ion-label>
+    <ion-toggle [(ngModel)]="ward3Sta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="ward3Sta">
+    <ion-list *ngFor="let ward3Link of ward3Links | async">
+      <a ion-item href="{{ward3Link.url}}" text-wrap>
+        <u>{{ward3Link.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- or link -->
+  <ion-item>
+    <ion-label text-wrap>ห้องผ่าตัด</ion-label>
+    <ion-toggle [(ngModel)]="orSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="orSta">
+    <ion-list *ngFor="let orLink of orLinks | async">
+      <a ion-item href="{{orLink.url}}" text-wrap>
+        <u>{{orLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ward2 link -->
+  <ion-item>
+    <ion-label text-wrap>Ward 2</ion-label>
+    <ion-toggle [(ngModel)]="ward2Sta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="ward2Sta">
+    <ion-list *ngFor="let ward2Link of ward2Links | async">
+      <a ion-item href="{{ward2Link.url}}" text-wrap>
+        <u>{{ward2Link.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- ยานพาหนะ link -->
+  <ion-item>
+    <ion-label text-wrap>ยานพาหนะ</ion-label>
+    <ion-toggle [(ngModel)]="vehiSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="vehiSta">
+    <ion-list *ngFor="let vehiLink of vehiLinks | async">
+      <a ion-item href="{{vehiLink.url}}" text-wrap>
+        <u>{{vehiLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
+  <!-- อาคารและสถานที่ link -->
+  <ion-item>
+    <ion-label text-wrap>อาคารและสถานที่</ion-label>
+    <ion-toggle [(ngModel)]="bdSta"></ion-toggle>
+  </ion-item>
+  <div *ngIf="bdSta">
+    <ion-list *ngFor="let bdLink of bdLinks | async">
+      <a ion-item href="{{bdLink.url}}" text-wrap>
+        <u>{{bdLink.title}}</u>
+      </a>
+    </ion-list>
+  </div>
 </ion-content>

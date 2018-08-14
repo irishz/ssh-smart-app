@@ -4,6 +4,7 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
+import { ResetPasswordPage } from '../reset-password/reset-password';
 /**
  * Generated class for the LoginPage page.
  *
@@ -20,12 +21,7 @@ export class LoginPage {
   user = {} as User;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private afAuth: AngularFireAuth) {
-  
-    var user = this.afAuth.auth.currentUser;
-    if (user != null){
-      console.log(user.displayName);
-      this.navCtrl.push(HomePage);
-    };
+    
   }
 
   alert(message: string) {
@@ -48,6 +44,10 @@ export class LoginPage {
 
   register() {
     this.navCtrl.push(RegisterPage);
+  }
+
+  resetPassword(){
+    this.navCtrl.push(ResetPasswordPage);
   }
 
 }

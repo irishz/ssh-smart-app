@@ -15,6 +15,9 @@ import { InlinkPage } from '../pages/inlink/inlink';
 import { OutlinkPage } from '../pages/outlink/outlink';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { NewsDetailPage } from '../pages/news-detail/news-detail';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { SettingPage } from '../pages/setting/setting';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +41,10 @@ import { AuthProvider } from '../providers/auth/auth';
     InlinkPage,
     OutlinkPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    NewsDetailPage,
+    ResetPasswordPage,
+    SettingPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,10 @@ import { AuthProvider } from '../providers/auth/auth';
     InlinkPage,
     OutlinkPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    NewsDetailPage,
+    ResetPasswordPage,
+    SettingPage
   ],
   providers: [
     StatusBar,

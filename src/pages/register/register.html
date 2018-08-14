@@ -12,18 +12,36 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <form [formGroup]="formgroup">
     <ion-list>
-
+      <ion-item>
+        <ion-label stacked>ชื่อ-นามสกุล</ion-label>
+        <ion-input type="text" #newName></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>ตำแหน่ง</ion-label>
+        <ion-input type="text" #newPosition></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>แผนก</ion-label>
+        <ion-input type="text" #newDepartment></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>หมายเลขโทรศัพท์มือถือ</ion-label>
+        <ion-input type="text" #newMobile></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+          <ion-label stacked text-wrap>คุณเป็นพนักงานเก่าหรือใหม่? (พนักงานใหม่คืออายุงานน้อยกว่า 14 วัน)</ion-label>
+          <ion-input type="text" placeholder="พิมพ์คำว่า 'เก่า' หรือ 'ใหม่' เท่านั้น" #newType></ion-input>
+        </ion-item> -->
       <ion-item>
         <ion-label floating>Email Address</ion-label>
-        <ion-input type="text" [formControl]="formgroup.controls['email']" [(ngModel)]="user.email"></ion-input>
+        <ion-input type="email" [formControl]="formgroup.controls['email']" [(ngModel)]="user.email" #newEmail></ion-input>
       </ion-item>
       <div padding>
         <p id="err-msg" *ngIf="email.hasError('required') && email.touched">*กรุณากรอกอีเมล</p>
-        <p id="err-msg" *ngIf="formgroup.controls['email'].errors && formgroup.controls['email'].dirty">*กรุณาใส่อีเมลของโรงพยาบาล เช่น <br>(อีเมล@suksawathospital.com)</p>
+        <p id="err-msg" *ngIf="formgroup.controls['email'].errors && formgroup.controls['email'].dirty">*กรุณาใส่รูปแบบอีเมลที่ถูกต้อง</p>
       </div>
 
       <ion-item>
@@ -36,7 +54,7 @@
       </div>
 
     </ion-list>
-    <button ion-button full color="primary" [disabled]="!formgroup.valid" (click)="register(user)">
+    <button ion-button full color="primary" [disabled]="!formgroup.valid" (click)="register(user,newName.value,newPosition.value,newDepartment.value,newMobile.value,newEmail.value)">
       <ion-icon name="person-add"></ion-icon> Register</button>
   </form>
 </ion-content>

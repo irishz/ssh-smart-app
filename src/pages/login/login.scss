@@ -1,7 +1,12 @@
-#btnGroup{
+#btnLogin{
     text-align: center;
     width: 80%;
-    margin-top: 20px; 
+    margin: 20px 0px 20px 0px; 
+}
+#btnRegister{
+    text-align: center;
+    width: 80%;
+    margin: 0px 0px 20px 0px; 
 }
 
 #row{
@@ -18,7 +23,7 @@
 }
 
 #bg{
-    background-image: url('../../assets/imgs/bg-login.jpg');
+    background-image: url('../assets/imgs/bg-login.jpg')!important;
     background-position: center;
     background-size: cover;
 }
@@ -39,4 +44,8 @@
     font-size: 1.1rem;
     color: white;
     text-align: end;
+}
+
+.forgot-password{
+    color: rgb(236, 162, 0);
 }

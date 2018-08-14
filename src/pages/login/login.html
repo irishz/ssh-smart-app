@@ -2,7 +2,7 @@
 	<ion-grid style="height: 100%">
 		<ion-row justify-content-center id="row">	
 			<ion-col id="col-content" col-10>
-					<img id="logo" src="../../assets/imgs/ssh-logo.png" alt="ssh-logo">
+					<img id="logo" src="assets/imgs/ssh-logo.png" alt="ssh-logo">
 				<ion-item>
 					<ion-label color="primary" floating>Email Address</ion-label>
 					<ion-input id="login-input" type="text" [(ngModel)]="user.email"></ion-input>
@@ -14,9 +14,10 @@
 					<ion-input id="login-input" type="password" [(ngModel)]="user.password"></ion-input>
 				</ion-item>
 				
-				<button id="btnGroup" ion-button color="primary" (click)="login(user)"outline round>Login<ion-icon name="checkmark-circle-outline"></ion-icon></button>
-				<button id="btnGroup" ion-button color="danger" (click)="register()" outline round>Register<ion-icon name="person-add"></ion-icon></button>
+				<button id="btnLogin" ion-button color="primary" (click)="login(user)"outline round>Login<ion-icon name="checkmark-circle-outline"></ion-icon></button>
+        <button id="btnRegister" ion-button color="danger" (click)="register()" outline round>Register<ion-icon name="person-add"></ion-icon></button>
+        <br><a (click)="resetPassword()" class="forgot-password">forgot password?</a>
 			</ion-col>
-		</ion-row>
-	</ion-grid>
+    </ion-row>
+  </ion-grid>
 </ion-content>
