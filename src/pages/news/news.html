@@ -18,16 +18,20 @@
     <ion-list-header>
       News
     </ion-list-header>
-    <ion-item *ngFor="let news of newss | async">
-      <ion-avatar item-start>
-        <img [src]="news.img">
-      </ion-avatar>
-      <h2>{{news.title}}</h2>
-      <p>{{news.message}}</p>
-      <ion-note item-end>
-        {{news.time}}
-      </ion-note>
-    </ion-item>
-  </ion-list>
+    <ion-item-sliding *ngFor="let news of newss | async" #item>
+      <ion-item>
+        <img id="news-img" [src]="news.img" item-start>
+        <h2>{{news.title}}</h2>
+        <p id="news-content">{{news.content}}</p>
+        <p id="news-datetime">{{news.datetime}}</p>
+      </ion-item>
 
+      <ion-item-options>
+        <button ion-button color="primary" (click)="see(news)">
+          <ion-icon name="eye"></ion-icon>
+          อ่านต่อ..
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
