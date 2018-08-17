@@ -4,12 +4,6 @@ import { NewsDetailPage } from '../news-detail/news-detail';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-/**
- * Generated class for the NewsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,16 +13,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class NewsPage {
   newss: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
-    this.newss = this.db.list('news').valueChanges();
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
+    this.newss = db.list('/news').valueChanges();
+    // this.newss = this.db.list('news');
   }
 
   see(item){
-    console.log('see');
     this.navCtrl.push(NewsDetailPage, item);
   }
 }
