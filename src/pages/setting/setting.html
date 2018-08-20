@@ -12,19 +12,12 @@
 
 </ion-header>
 
-<ion-content padding>
-  <ion-item-group>
-    <!-- <ion-item>
-          <ion-icon name="plane" item-start color="danger"></ion-icon>
-          <ion-label>Airplane Mode</ion-label>
-          <ion-toggle color="secondary"></ion-toggle>
-        </ion-item> -->
 
-    <ion-item (click)="homepage()">
-      กลับสู่หน้าแรก
-      <button ion-button icon-only item-end clear>
-        <ion-icon name="exit"></ion-icon>
-      </button>
-    </ion-item>
-  </ion-item-group>
+<ion-content padding>
+  <button ion-item (click)="editPage()">
+    Edit Profile
+  </button>
+  <button ion-item (click)="commentPage()">
+    comment
+  </button>
 </ion-content>
