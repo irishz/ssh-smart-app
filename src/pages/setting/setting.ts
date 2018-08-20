@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CommentPage } from '../comment/comment';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the SettingPage page.
@@ -18,8 +20,12 @@ export class SettingPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingPage');
+  commentPage(){
+    this.navCtrl.push(CommentPage);
+  }
+
+  editPage(){
+    this.navCtrl.push(ProfilePage);
   }
 
 }

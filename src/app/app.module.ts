@@ -19,6 +19,7 @@ import { NewsDetailPage } from '../pages/news-detail/news-detail';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SettingPage } from '../pages/setting/setting';
 import { NewsPage } from '../pages/news/news';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,7 +47,8 @@ import { AuthProvider } from '../providers/auth/auth';
     NewsDetailPage,
     ResetPasswordPage,
     SettingPage,
-    NewsPage
+    NewsPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { AuthProvider } from '../providers/auth/auth';
     NewsDetailPage,
     ResetPasswordPage,
     SettingPage,
-    NewsPage
+    NewsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
