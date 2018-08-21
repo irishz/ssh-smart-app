@@ -21,18 +21,20 @@ export class ProfilePage {
   userEmail: any;
   items: Observable<any[]>;
   ref: AngularFireList<any[]>;
-  temp: Observable<any[]>;
+  keyStore: any;
   toast: any;
+  index:number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private db: AngularFireDatabase, private toastCtrl: ToastController) {
     this.userEmail = this.afAuth.auth.currentUser.email;
     this.items = this.db.list('employee', ref => ref.orderByChild('email').equalTo(this.userEmail)).valueChanges();
-
+    this.keyStore = this.db.list('employee', ref => ref.orderByChild('email').equalTo(this.userEmail)).valueChanges().subscribe(res => {
+      console.log('res_array:', res);
+    });
   }
 
   ionViewDidLoad() {
-    console.log(this.items);
-    console.log(this.temp);
+    console.log('key:', this.keyStore.$key);
   }
 
   showToast() {
@@ -52,7 +54,7 @@ export class ProfilePage {
       department: newDept,
       mobile: newMobile,
     });
-    this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    this.navCtrl.popTo(this.navCtrl.getActive().component);
   }
 
 }
