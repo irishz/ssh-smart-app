@@ -22,7 +22,7 @@ export class RegisterPage {
 
     this.formgroup = this.formbuilder.group({
       email: ['', Validators.compose([Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'), Validators.required])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
     });
 
     this.email = this.formgroup.controls['email'];

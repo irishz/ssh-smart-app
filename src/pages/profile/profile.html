@@ -14,22 +14,25 @@
 
 <ion-content padding>
   <h1>{{userEmail}}</h1>
-  <ion-list *ngFor="let item of items | async">
+  <ion-list *ngFor="let i of items | async">
+    <p>User ID:</p>
     <ion-item>
       <ion-label stacked>ชื่อ</ion-label>
-      <ion-input type="text" value="{{item.name}}"></ion-input>
+      <ion-input type="text" value="{{i.name}}" #newName></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>ตำแหน่ง</ion-label>
-      <ion-input type="text" value="{{item.position}}"></ion-input>
+      <ion-input type="text" value="{{i.position}}" #newPos></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>แผนก</ion-label>
-      <ion-input type="text" value="{{item.department}}"></ion-input>
+      <ion-input type="text" value="{{i.department}}" #newDept></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>หมายเลขโทรศัพท์มือถือ</ion-label>
-      <ion-input type="text" value="{{item.mobile}}"></ion-input>
+      <ion-input type="text" value="{{i.mobile}}" #newMobile></ion-input>
     </ion-item>
+    <button ion-button full color="primary" (click)="update(newName.value, newPos.value, newDept.value, newMobile.value)" (click)="showToast()">
+        <ion-icon name="refresh"></ion-icon> Update</button>
   </ion-list>
 </ion-content>

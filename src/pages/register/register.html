@@ -50,7 +50,8 @@
       </ion-item>
       <div padding>
         <p id="err-msg" *ngIf="password.hasError('required') && password.touched">*กรุณากรอกรหัสผ่าน</p>
-        <p id="err-msg" *ngIf="formgroup.controls['password'].errors && formgroup.controls['password'].dirty">*รหัสผ่านประกอบด้วยตัวอักษรหรือตัวเลขอย่างน้อย 6 ตัวอักษร</p>
+        <p id="err-msg" *ngIf="formgroup.controls['password'].errors && formgroup.controls['password'].dirty">*รหัสผ่านประกอบด้วยตัวอักษรหรือตัวเลขอย่างน้อย
+          6 ตัวอักษร</p>
       </div>
 
     </ion-list>
