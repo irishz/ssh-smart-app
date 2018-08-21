@@ -5,7 +5,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { NewsDetailPage } from '../news-detail/news-detail';
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -26,9 +25,4 @@ export class HomePage {
     this.navCtrl.push(TabsPage)
   }
 
-  async logout(): Promise<void>{
-    return this.afAuth.auth.signOut().then(() => {
-      this.navCtrl.setRoot(LoginPage);
-    })
-  }
 }

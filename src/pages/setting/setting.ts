@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommentPage } from '../comment/comment';
 import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the SettingPage page.
@@ -17,7 +19,7 @@ import { ProfilePage } from '../profile/profile';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private afAuth: AngularFireAuth) {
   }
 
   commentPage(){
@@ -26,6 +28,12 @@ export class SettingPage {
 
   editPage(){
     this.navCtrl.push(ProfilePage);
+  }
+
+  async logout(): Promise<void>{
+    return this.afAuth.auth.signOut().then(() => {
+      this.navCtrl.setRoot(LoginPage);
+    })
   }
 
 }

@@ -19,16 +19,20 @@ import { Observable } from 'rxjs';
 export class ProfilePage {
 
   userEmail: any;
-  items: any;
+  items: Observable<any[]>;
+  ref: Observable<any[]>;
   temp: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.userEmail = this.afAuth.auth.currentUser.email;
-    this.temp = this.db.object('employee').query.orderByChild('employee').equalTo(this.userEmail);
+    this.items = this.db.list('employee', ref => ref.orderByChild('email').equalTo(this.userEmail)).valueChanges();
   }
 
   ionViewDidLoad() {
-    console.log(this.temp); 
+    console.log(this.items); 
   }
 
+  update(){
+    
+  }
 }
