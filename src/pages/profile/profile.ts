@@ -23,7 +23,7 @@ export class ProfilePage {
   ref: AngularFireList<any[]>;
   keyStore: any;
   toast: any;
-  index:number;
+  index: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private db: AngularFireDatabase, private toastCtrl: ToastController) {
     this.userEmail = this.afAuth.auth.currentUser.email;
