@@ -16,6 +16,10 @@ import { User } from '../../models/user';
 })
 export class ResetPasswordPage {
   user = {} as User;
+
+  public type = 'password';
+  public showPass = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth,private alertCtrl: AlertController) {
   }
 

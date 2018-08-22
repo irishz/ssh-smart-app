@@ -17,12 +17,13 @@ export class RegisterPage {
   formgroup: FormGroup;
   email: AbstractControl;
   password: AbstractControl;
+  startdate: Date;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder,private db: AngularFireDatabase) {
 
     this.formgroup = this.formbuilder.group({
       email: ['', Validators.compose([Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'), Validators.required])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
     });
 
     this.email = this.formgroup.controls['email'];
@@ -47,7 +48,7 @@ export class RegisterPage {
       .catch(error => {
         this.alert(error.message);
       })
-// console.log(newName,newPosition,newDepartment,newMobile,newEmail);
+// console.log(this.startdate);
 
     const itemsRef = this.db.list('employee');
     itemsRef.push({
@@ -55,7 +56,8 @@ export class RegisterPage {
       position: newPosition,
       department: newDepartment,
       mobile: newMobile,
-      email: newEmail
+      email: newEmail,
+      startdate: this.startdate
     });
   }
 

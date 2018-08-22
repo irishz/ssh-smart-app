@@ -21,7 +21,7 @@ export class ProfilePage {
   userEmail: any;
   items: Observable<any[]>;
   ref: AngularFireList<any[]>;
-  keyStore: any;
+  public keyStore: any;
   toast: any;
   index: number;
 
@@ -48,7 +48,7 @@ export class ProfilePage {
 
   update(newName: string,newPos: string, newDept: string, newMobile: string) {
     const itemsRef = this.db.list('employee');
-    itemsRef.update('-LKPGKZWr3yHDpLv6oPy', { 
+    itemsRef.update('1', { 
       name: newName,
       position: newPos,
       department: newDept,

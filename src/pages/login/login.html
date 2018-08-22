@@ -4,20 +4,20 @@
 			<ion-col id="col-content" col-10>
 					<img id="logo" src="assets/imgs/ssh-logo.png" alt="ssh-logo">
 				<ion-item>
-					<ion-label color="primary" floating>Email Address</ion-label>
+					<ion-label color="primary" floating>อีเมล</ion-label>
 					<ion-input id="login-input" type="text" [(ngModel)]="user.email"></ion-input>
 				</ion-item>
-				<p id="eg-text">(e.g.example@suksawathospital.com)</p>
+				<!-- <p id="eg-text">(เช่น example@suksawathospital.com)</p> -->
 			
 				<ion-item id="pass-form">
-					<ion-label color="primary" floating>Password</ion-label>
+					<ion-label color="primary" floating>รหัสผ่าน</ion-label>
 					<ion-input id="login-input" type="password" [(ngModel)]="user.password"></ion-input>
 				</ion-item>
 				
-				<button id="btnLogin" ion-button color="primary" (click)="login(user)"outline round>Login<ion-icon name="checkmark-circle-outline"></ion-icon></button>
-        <button id="btnRegister" ion-button color="danger" (click)="register()" outline round>Register<ion-icon name="person-add"></ion-icon></button>
-        <br><a (click)="resetPassword()" class="forgot-password">forgot password?</a>
+				<button id="btnLogin" ion-button color="primary" (click)="login(user)"outline round>ล็อกอิน<ion-icon name="checkmark-circle-outline"></ion-icon></button>
+				<button id="btnRegister" ion-button color="danger" (click)="register()" outline round>สมัครสมาชิก<ion-icon name="person-add"></ion-icon></button>
+				<br><a (click)="resetPassword()" class="forgot-password">ลืมรหัสผ่าน?</a>  
 			</ion-col>
-    </ion-row>
+		</ion-row>
   </ion-grid>
 </ion-content>
