@@ -15,7 +15,7 @@
 <ion-content padding>
   <h1>{{userEmail}}</h1>
   <div>
-    <p>User ID: {{keyStore.index}}</p>
+    <p>User ID: </p>
   </div>
   <ion-list *ngFor="let i of items | async">
     <ion-item>
@@ -35,6 +35,6 @@
       <ion-input type="text" value="{{i.mobile}}" #newMobile></ion-input>
     </ion-item>
     <button ion-button full color="primary" (click)="update(newName.value, newPos.value, newDept.value, newMobile.value)" (click)="showToast()">
-      <ion-icon name="refresh"></ion-icon> Update</button>
+      <ion-icon name="refresh"></ion-icon> อัพเดท</button>
   </ion-list>
 </ion-content>
