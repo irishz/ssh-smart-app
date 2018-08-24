@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewsDetailPage } from '../news-detail/news-detail';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @IonicPage()
@@ -16,7 +16,7 @@ export class NewsPage {
   // newss: Observable<any[]>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase) {
     this.newss = db.list('/news').valueChanges();
   }
 

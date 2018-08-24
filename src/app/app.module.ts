@@ -29,7 +29,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthProvider } from '../providers/auth/auth';
 
-
+import { Facebook } from '@ionic-native/facebook';
 @NgModule({
   declarations: [
     MyApp,
@@ -83,6 +83,7 @@ import { AuthProvider } from '../providers/auth/auth';
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    Facebook
   ]
 })
 export class AppModule {}

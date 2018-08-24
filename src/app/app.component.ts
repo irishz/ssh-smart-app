@@ -13,7 +13,7 @@ import { HomePage } from '../pages/home/home';
 export class MyApp {
   rootPage: any = LoginPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private afAuth: AngularFireAuth) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public afAuth: AngularFireAuth) {
 
     platform.ready().then(() => {
       const unsubscribe = afAuth.auth.onAuthStateChanged(user => {
