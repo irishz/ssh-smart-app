@@ -19,7 +19,7 @@ export class RegisterPage {
   password: AbstractControl;
   startdate: Date;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder,private db: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder, private db: AngularFireDatabase) {
 
     this.formgroup = this.formbuilder.group({
       email: ['', Validators.compose([Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'), Validators.required])],
@@ -40,7 +40,7 @@ export class RegisterPage {
     this.navCtrl.push(LoginPage);
   }
 
-  async register(user: User,newName: string,newPosition: string,newDepartment: string,newMobile: string, newEmail:string) {
+  async register(user: User, newName: string, newPosition: string, newDepartment: string, newMobile: string, newEmail: string) {
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then(data => {
         this.alert('Registered!');
@@ -48,7 +48,7 @@ export class RegisterPage {
       .catch(error => {
         this.alert(error.message);
       })
-// console.log(this.startdate);
+    // console.log(this.startdate);
 
     const itemsRef = this.db.list('employee');
     itemsRef.push({

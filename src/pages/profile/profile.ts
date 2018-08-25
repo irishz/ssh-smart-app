@@ -26,7 +26,7 @@ export class ProfilePage {
     this.items = this.db.list('employee', ref => ref.orderByChild('email').equalTo(this.userEmail)).valueChanges();
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     // console.log(this.keystore);
   }
 
@@ -39,9 +39,9 @@ export class ProfilePage {
     toast.present();
   }
 
-  update(newName: string,newPos: string, newDept: string, newMobile: string) {
+  update(newName: string, newPos: string, newDept: string, newMobile: string) {
     const itemsRef = this.db.list('employee');
-    itemsRef.update('1', { 
+    itemsRef.update('-LKW4IBw7vzXVZaJQXXy', {
       name: newName,
       position: newPos,
       department: newDept,
