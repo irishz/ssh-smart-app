@@ -16,15 +16,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'employee.html',
 })
 export class EmployeePage {
+
   items: Observable<any[]>;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
 
     this.items = this.db.list('employee').valueChanges();
 
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EmployeePage');
   }
 
 }
