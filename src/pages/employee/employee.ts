@@ -18,10 +18,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class EmployeePage {
 
   items: Observable<any[]>;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
 
-    this.items = this.db.list('employee').valueChanges();
+    this.items = this.db.list('employee', ref => ref.orderByChild('type').equalTo('new')).valueChanges();
 
   }
 
