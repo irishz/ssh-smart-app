@@ -4,7 +4,7 @@
     <description>An awesome Ionic/Cordova app.</description>
     <author email="ssh.itd@suksawathospital.com" href="http://ionicframework.com/">Suksawat hospital IT department</author>
     <universal-links>
-        <host name="https://ssh-infor-97c07.firebaseapp.com/__/auth/handler" scheme="https" />
+        <host name="https://smartapp.page.link" scheme="https" />
         <host name="ssh-infor-97c07.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
@@ -25,6 +25,8 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/ssh-ldpi-icon.png" />
@@ -73,7 +75,6 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.2" />
@@ -82,6 +83,7 @@
     <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-facebook4" spec="^2.3.0">
         <variable name="APP_ID" value="2019695111384963" />
         <variable name="APP_NAME" value="SSH Smart App" />
