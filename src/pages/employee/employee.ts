@@ -19,12 +19,7 @@ export class EmployeePage {
   items: Observable<any[]>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
 
-    this.items = this.db.list('employee').valueChanges();
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EmployeePage');
+    this.items = this.db.list('employee', ref => ref.orderByChild('type').equalTo('new')).valueChanges();
   }
 
 }

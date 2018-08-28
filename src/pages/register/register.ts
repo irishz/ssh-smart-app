@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/fo
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginPage } from '../login/login';
 import { AngularFireDatabase } from 'angularfire2/database';
+import * as moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -17,7 +18,10 @@ export class RegisterPage {
   formgroup: FormGroup;
   email: AbstractControl;
   password: AbstractControl;
-  startdate: Date;
+  startdate: any;
+  now: any = new Date().toISOString();
+  thisYear: any = new Date().toISOString();
+  employeeType = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder, private db: AngularFireDatabase) {
 
@@ -48,7 +52,13 @@ export class RegisterPage {
       .catch(error => {
         this.alert(error.message);
       })
-    // console.log(this.startdate);
+
+    this.now = moment(this.startdate, "YYYYMMDD").fromNow();
+    if (this.now == '2 months ago') {
+      this.employeeType = 'new';
+    } else {
+      this.employeeType = 'old';
+    }
 
     const itemsRef = this.db.list('employee');
     itemsRef.push({
@@ -57,7 +67,8 @@ export class RegisterPage {
       department: newDepartment,
       mobile: newMobile,
       email: newEmail,
-      startdate: this.startdate
+      startdate: this.startdate,
+      type: this.employeeType
     });
   }
 
