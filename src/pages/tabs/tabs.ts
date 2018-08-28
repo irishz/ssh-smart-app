@@ -19,13 +19,7 @@ export class TabsPage {
   }
 
   ionViewDidLoad() {
-    let elements = document.querySelectorAll(".tabbar");
-
-    if (elements != null) {
-      Object.keys(elements).map((key) => {
-        elements[key].style.display = 'none';
-      });
-    }
+    
   }
   
 }
