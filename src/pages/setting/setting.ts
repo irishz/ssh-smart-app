@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { CommentPage } from '../comment/comment';
 import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
@@ -19,7 +19,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private afAuth: AngularFireAuth) {
+  constructor(public appCtrl: App,public navCtrl: NavController, public navParams: NavParams,private afAuth: AngularFireAuth) {
   }
 
   commentPage(){
@@ -32,7 +32,7 @@ export class SettingPage {
 
   async logout(): Promise<void>{
     return this.afAuth.auth.signOut().then(() => {
-      this.navCtrl.setRoot(LoginPage);
+      this.appCtrl.getRootNav().setRoot(LoginPage);
     })
   }
 
