@@ -22,6 +22,46 @@ export class RegisterPage {
   now: any = new Date().toISOString();
   thisYear: any = new Date().toISOString();
   employeeType = '';
+  department: any = '';
+  departlists = [
+    { name: 'Call Center', val: 'CALL' },
+    { name: 'IT', val: 'ITD' },
+    { name: 'กายภาพบำบัด', val: 'PHY' },
+    { name: 'การขายและการตลาด', val: 'MKT' },
+    { name: 'การเงิน', val: 'FIN' },
+    { name: 'เคลมเซ็นเตอร์', val: 'CLA' },
+    { name: 'คลังสินค้า-พัสดุ', val: 'PUD' },
+    { name: 'ช่างซ่อมบำรุง', val: 'ENG' },
+    { name: 'ทันตกรรม', val: 'DEN' },
+    { name: 'ธุรการ', val: 'ADMIN' },
+    { name: 'ธุรการ/เลขา', val: 'SEC' },
+    { name: 'บริการส่วนหน้า', val: 'FNT' },
+    { name: 'บริหาร', val: 'MNG' },
+    { name: 'บริหารทรัพยากรทางการแพทย์', val: 'UMD' },
+    { name: 'บัญชี', val: 'ACC' },
+    { name: 'ประกันและลูกค้าสัมพันธ์ (CRM)', val: 'CRM' },
+    { name: 'ผู้ป่วยนอก (Premium)  (OPD2)', val: 'OPD2' },
+    { name: 'ผู้ป่วยนอก (ประกันสังคม)  (OPD1)', val: 'OPD1' },
+    { name: 'เภสัชกรรม', val: 'PHA' },
+    { name: 'โภชนาการ', val: 'NUD' },
+    { name: 'ยานพาหนะ (VEH)', val: 'VEH' },
+    { name: 'รังสีวิทยา (X-Ray)', val: 'xray' },
+    { name: 'รับ-ส่งผู้ป่วย (TRD)', val: 'TRD' },
+    { name: 'เวชระเบียนและเวชสถิติ', val: 'MRD' },
+    { name: 'ศูนย์จัดการยุทธศาสตร์องค์กร(SMC)', val: 'SMC' },
+    { name: 'ศูนย์พัฒนาคุณภาพองค์กร', val: 'QIC' },
+    { name: 'สิทธิประโยชน์', val: 'ADM' },
+    { name: 'รักษาความปลอดภัย', val: 'SCR' },
+    { name: 'ห้องคลอดและทารกแรกเกิด(LND) Special Unit', val: 'LND' },
+    { name: 'ห้องผ่าตัด(ORD) Special Unit', val: 'ORD' },
+    { name: 'หอผู้ป่วย VIP ชั้น 5 (IPD 5)', val: 'IPD5' },
+    { name: 'หอผู้ป่วยในชั้น 2 (IPD 2)', val: 'IPD2' },
+    { name: 'หอผู้ป่วยในชั้น 3 (IPD 3)', val: 'IPD3' },
+    { name: 'หอผู้ป่วยในชั้น 4 (IPD 4)', val: 'IPD4' },
+    { name: 'หอผู้ป่วยหนัก (ICU) Special Unit', val: 'ICU' },
+    { name: 'อาคารสถานที่', val: 'BUD' },
+    { name: 'อุบัติเหตุ - ฉุกเฉิน (A&E)', val: 'A&E' },
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder, private db: AngularFireDatabase) {
 
@@ -44,7 +84,7 @@ export class RegisterPage {
     this.navCtrl.push(LoginPage);
   }
 
-  async register(user: User, newName: string, newPosition: string, newDepartment: string, newMobile: string, newEmail: string) {
+  async register(user: User, newName: string, newPosition: string, newMobile: string, newEmail: string) {
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then(data => {
         this.alert('Registered!');
@@ -64,7 +104,7 @@ export class RegisterPage {
     itemsRef.push({
       name: newName,
       position: newPosition,
-      department: newDepartment,
+      department: this.department,
       mobile: newMobile,
       email: newEmail,
       startdate: this.startdate,
