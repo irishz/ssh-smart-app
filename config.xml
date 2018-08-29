@@ -3,12 +3,6 @@
     <name>SSH Smart App</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="ssh.itd@suksawathospital.com" href="http://ionicframework.com/">Suksawat hospital IT department</author>
-    <universal-links>
-        <host name="https://ssh-infor-97c07.firebaseapp.com/__/auth/handler" scheme="https" />
-        <host name="ssh-infor-97c07.firebaseapp.com" scheme="https">
-            <path url="/__/auth/callback" />
-        </host>
-    </universal-links>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
