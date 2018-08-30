@@ -20,6 +20,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SettingPage } from '../pages/setting/setting';
 import { NewsPage } from '../pages/news/news';
 import { ProfilePage } from '../pages/profile/profile';
+import { LoginphonePage } from '../pages/loginphone/loginphone';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -48,7 +49,8 @@ import { Facebook } from '@ionic-native/facebook';
     ResetPasswordPage,
     SettingPage,
     NewsPage,
-    ProfilePage
+    ProfilePage,
+    LoginphonePage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { Facebook } from '@ionic-native/facebook';
     ResetPasswordPage,
     SettingPage,
     NewsPage,
-    ProfilePage
+    ProfilePage,
+    LoginphonePage
   ],
   providers: [
     StatusBar,
