@@ -14,9 +14,6 @@
 
 <ion-content padding>
   <h1>{{userEmail}}</h1>
-  <div>
-    <p>User ID: </p>
-  </div>
   <ion-list *ngFor="let i of items | async">
     <ion-item>
       <ion-label stacked>ชื่อ</ion-label>
@@ -34,6 +31,7 @@
       <ion-label stacked>หมายเลขโทรศัพท์มือถือ</ion-label>
       <ion-input type="text" value="{{i.mobile}}" #newMobile></ion-input>
     </ion-item>
+    <div *ngIf=""></div>
     <button ion-button full color="primary" (click)="update(newName.value, newPos.value, newDept.value, newMobile.value)" (click)="showToast()">
       <ion-icon name="refresh"></ion-icon> อัพเดท</button>
   </ion-list>
