@@ -20,17 +20,12 @@ export class ProfilePage {
 
   userEmail: any;
   userMobile: any;
-  loginstatus: any;
   items: Observable<any[]>;
   key: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private db: AngularFireDatabase, private toastCtrl: ToastController) {
     this.userEmail = this.afAuth.auth.currentUser.email;
-    this.userMobile = this.afAuth.auth.currentUser.phoneNumber;
-    this.loginstatus = this.afAuth.authState;
     this.items = this.db.list('employee', ref => ref.orderByChild('email').equalTo(this.userEmail)).valueChanges();
-    console.log(this.loginstatus);
-    
   }
 
   showToast() {

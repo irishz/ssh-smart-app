@@ -41,23 +41,22 @@ export class LoginphonePage {
                 confirmationResult.confirm(data.confirmationCode)
                   .then(function (result) {
                     // User signed in successfully.
-                    console.log("result: ",result.user);
+                    console.log("result: ", result.user);
                     // ...
                   }).catch(function (error) {
                     // User couldn't sign in (bad verification code?)
                     // ...
                   });
+                prompt.dismiss().then(() => this.navCtrl.setRoot(HomePage));
               }
             }
           ]
         });
         prompt.present();
-        this.navCtrl.push(HomePage);
       })
       .catch(function (error) {
         console.error("SMS not sent", error);
       });
-
   }
 
   dismiss() {
