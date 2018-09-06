@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { NewsDetailPage } from '../news-detail/news-detail';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-
-@IonicPage()
 @Component({
   selector: 'page-news',
   templateUrl: 'news.html',

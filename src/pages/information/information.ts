@@ -1,18 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { HistoryPage } from '../history/history';
 import { MottoPage } from '../motto/motto';
 import { InlinkPage } from '../inlink/inlink';
 import { OutlinkPage } from '../outlink/outlink';
 
-/**
- * Generated class for the InformationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-information',
   templateUrl: 'information.html',

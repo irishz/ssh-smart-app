@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import { NavController, NavParams, AlertController} from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
-/**
- * Generated class for the CommentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-comment',
   templateUrl: 'comment.html',
