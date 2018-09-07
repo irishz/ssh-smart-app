@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 import { LoginphonePage } from '../loginphone/loginphone';
-// import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -7,7 +7,6 @@ import { LoginPage } from '../login/login';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as moment from 'moment';
 
-@IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',

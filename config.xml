@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
+<<<<<<< HEAD
 <widget id="com.sshitdev.sshsmartapp" version="1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+=======
+<widget id="com.sshitdev.sshsmartapp" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+>>>>>>> 9851846239c149ce9984628316c07bf8c358453c
     <name>SSH Smart App</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="ssh.itd@suksawathospital.com" href="http://ionicframework.com/">Suksawat hospital IT department</author>
