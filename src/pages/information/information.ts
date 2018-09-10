@@ -4,6 +4,7 @@ import { HistoryPage } from '../history/history';
 import { MottoPage } from '../motto/motto';
 import { InlinkPage } from '../inlink/inlink';
 import { OutlinkPage } from '../outlink/outlink';
+import { StrategyPage } from '../strategy/strategy';
 
 @Component({
   selector: 'page-information',
@@ -30,6 +31,15 @@ export class InformationPage {
     });
     toast.present();
     this.navCtrl.push(MottoPage);
+  }
+
+  strategy(){
+    const toast = this.toastCtrl.create({
+      message: 'Stategy page!',
+      duration: 2000
+    });
+    toast.present();
+    this.navCtrl.push(StrategyPage);
   }
 
   inlink(){

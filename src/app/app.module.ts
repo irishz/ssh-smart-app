@@ -21,6 +21,7 @@ import { SettingPage } from '../pages/setting/setting';
 import { NewsPage } from '../pages/news/news';
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginphonePage } from '../pages/loginphone/loginphone';
+import { StrategyPage } from '../pages/strategy/strategy';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,7 +51,8 @@ import { Facebook } from '@ionic-native/facebook';
     SettingPage,
     NewsPage,
     ProfilePage,
-    LoginphonePage
+    LoginphonePage,
+    StrategyPage
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,8 @@ import { Facebook } from '@ionic-native/facebook';
     SettingPage,
     NewsPage,
     ProfilePage,
-    LoginphonePage
+    LoginphonePage,
+    StrategyPage
   ],
   providers: [
     StatusBar,
