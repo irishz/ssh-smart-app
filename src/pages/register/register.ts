@@ -93,7 +93,7 @@ export class RegisterPage {
       })
 
     // Log chekc User email
-      console.log("Email:",this.user.email);
+      // console.log("Email:",this.user.email);
 
     this.now = moment(this.startdate, "YYYYMMDD").fromNow();
     if(this.now >= '1 days ago' && this.now <= '31 days ago'){
@@ -102,8 +102,8 @@ export class RegisterPage {
       this.employeeType = 'old';
     }
     // Log check employee type
-    console.log(this.now);
-    console.log(this.employeeType);
+    // console.log(this.now);
+    // console.log(this.employeeType);
 
     // const itemsRef = 
     this.db.list('employee')
@@ -118,7 +118,7 @@ export class RegisterPage {
     });
 
     // Log check add employee data to firebase
-    console.log("Email:",this.user.email,"mobile:",newMobile,"depart:",this.department,"name:",newName,"pos:",newPosition);
+    // console.log("Email:",this.user.email,"mobile:",newMobile,"depart:",this.department,"name:",newName,"pos:",newPosition);
     
   }
 
