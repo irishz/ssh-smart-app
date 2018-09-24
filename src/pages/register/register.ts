@@ -83,7 +83,7 @@ export class RegisterPage {
     this.navCtrl.push(LoginPage);
   }
 
-  async register(user: User, newName: string, newPosition: string, newMobile: string, newEmail: string) {
+  async register(user: User, newName: string, newPosition: string, newMobile: string) {
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then(data => {
         this.alert('Registered!');
@@ -92,23 +92,45 @@ export class RegisterPage {
         this.alert(error.message);
       })
 
+    // Log chekc User email
+      console.log("Email:",this.user.email);
+
     this.now = moment(this.startdate, "YYYYMMDD").fromNow();
-    if (this.now == '2 months ago') {
+    if(this.now >= '1 days ago' && this.now <= '31 days ago'){
       this.employeeType = 'new';
-    } else {
+    }else{
       this.employeeType = 'old';
     }
+    // Log check employee type
+    console.log(this.now);
+    console.log(this.employeeType);
 
-    const itemsRef = this.db.list('employee');
-    itemsRef.push({
+    // const itemsRef = 
+    this.db.list('employee')
+    .push({
       name: newName,
       position: newPosition,
       department: this.department,
       mobile: newMobile,
-      email: newEmail,
+      email: this.user.email,
       startdate: this.startdate,
       type: this.employeeType
     });
+
+    // Log check add employee data to firebase
+    console.log("Email:",this.user.email,"mobile:",newMobile,"depart:",this.department,"name:",newName,"pos:",newPosition);
+    
+  }
+
+  // test get&calculate employeetype
+  testdate(){
+    this.now = moment(this.startdate, "YYYYMM").fromNow();
+    if(this.now >= '1 days ago' && this.now <= '31 days ago'){
+      this.employeeType = 'new';
+    }else{
+      this.employeeType = 'old';
+    }
+  
   }
 
 }
