@@ -21,13 +21,13 @@ export class LoginPage {
 
   }
 
-  // alert(message: string) {
-  //   this.alertCtrl.create({
-  //     title: 'Info',
-  //     subTitle: message,
-  //     buttons: ['OK']
-  //   }).present();
-  // }
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
 
   async login(user: User) {
     this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
@@ -35,7 +35,7 @@ export class LoginPage {
         this.navCtrl.setRoot(HomePage);
       })
       .catch(error => {
-        // this.alert(error.message);
+        this.alert(error.message);
       })
   }
 

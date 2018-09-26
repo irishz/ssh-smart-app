@@ -23,7 +23,7 @@ export class RegisterPage {
   employeeType = '';
   department: any = '';
   departlists = [
-    { name: 'Call Center', val: 'CALL' },
+    { name: 'Call Center', val: 'OCC' },
     { name: 'IT', val: 'ITD' },
     { name: 'กายภาพบำบัด', val: 'PHY' },
     { name: 'การขายและการตลาด', val: 'MKT' },
@@ -34,13 +34,13 @@ export class RegisterPage {
     { name: 'ทันตกรรม', val: 'DEN' },
     { name: 'ธุรการ', val: 'ADMIN' },
     { name: 'ธุรการ/เลขา', val: 'SEC' },
-    { name: 'บริการส่วนหน้า', val: 'FNT' },
+    { name: 'หน่วยบริการปฐมภูมิ', val: 'PCU' },
     { name: 'บริหาร', val: 'MNG' },
     { name: 'บริหารทรัพยากรทางการแพทย์', val: 'UMD' },
     { name: 'บัญชี', val: 'ACC' },
     { name: 'ประกันและลูกค้าสัมพันธ์ (CRM)', val: 'CRM' },
-    { name: 'ผู้ป่วยนอก (Premium)  (OPD2)', val: 'OPD2' },
-    { name: 'ผู้ป่วยนอก (ประกันสังคม)  (OPD1)', val: 'OPD1' },
+    { name: 'ผู้ป่วยนอก (Premium) (OPD2)', val: 'OPD2' },
+    { name: 'ผู้ป่วยนอก (ประกันสังคม) (OPD1)', val: 'OPD1' },
     { name: 'เภสัชกรรม', val: 'PHA' },
     { name: 'โภชนาการ', val: 'NUD' },
     { name: 'ยานพาหนะ (VEH)', val: 'VEH' },

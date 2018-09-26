@@ -21,15 +21,16 @@ export class ResetPasswordPage {
   }
 
   resetPassword(user: User) {
-    console.log(user.email);
-    this.afAuth.auth.sendPasswordResetEmail(user.email);
     
+    this.afAuth.auth.sendPasswordResetEmail(user.email);
+
     let alert = this.alertCtrl.create({
       title: 'สำเร็จ!',
       subTitle: 'ส่งรหัสผ่านใหม่เรียบร้อย กรุณาตรวจสอบอีเมลของท่าน',
       buttons: ['ตกลง']
     });
     alert.present();
+    console.log(user.email);
   }
 
 }
