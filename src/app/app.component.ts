@@ -19,6 +19,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
+      //Notification code here
+
       const unsubscribe = afAuth.auth.onAuthStateChanged(user => {
         if (!user) {
           this.rootPage = LoginPage;

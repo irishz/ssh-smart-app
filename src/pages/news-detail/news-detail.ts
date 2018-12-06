@@ -19,11 +19,6 @@ export class NewsDetailPage {
     this.datetime = this.navParams.get('datetime');
   }
 
-  ionViewDidLoad() {
-    console.log(this.navParams.get('title'));
-    
-  }
-
   closeModal(){
     this.view.dismiss();
   }

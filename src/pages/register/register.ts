@@ -17,49 +17,50 @@ export class RegisterPage {
   formgroup: FormGroup;
   email: AbstractControl;
   password: AbstractControl;
-  startdate: any;
-  now: any = new Date().toISOString();
-  thisYear: any = new Date().toISOString();
+  startdate: any = 1540198256055;
+  now: string = new Date().toISOString();
   employeeType = '';
   department: any = '';
+  case: any;
   departlists = [
-    { name: 'Call Center', val: 'OCC' },
-    { name: 'IT', val: 'ITD' },
-    { name: 'กายภาพบำบัด', val: 'PHY' },
-    { name: 'การขายและการตลาด', val: 'MKT' },
-    { name: 'การเงิน', val: 'FIN' },
-    { name: 'เคลมเซ็นเตอร์', val: 'CLA' },
-    { name: 'คลังสินค้า-พัสดุ', val: 'PUD' },
-    { name: 'ช่างซ่อมบำรุง', val: 'ENG' },
-    { name: 'ทันตกรรม', val: 'DEN' },
-    { name: 'ธุรการ', val: 'ADMIN' },
-    { name: 'ธุรการ/เลขา', val: 'SEC' },
-    { name: 'หน่วยบริการปฐมภูมิ', val: 'PCU' },
-    { name: 'บริหาร', val: 'MNG' },
-    { name: 'บริหารทรัพยากรทางการแพทย์', val: 'UMD' },
-    { name: 'บัญชี', val: 'ACC' },
-    { name: 'ประกันและลูกค้าสัมพันธ์ (CRM)', val: 'CRM' },
-    { name: 'ผู้ป่วยนอก (Premium) (OPD2)', val: 'OPD2' },
-    { name: 'ผู้ป่วยนอก (ประกันสังคม) (OPD1)', val: 'OPD1' },
-    { name: 'เภสัชกรรม', val: 'PHA' },
-    { name: 'โภชนาการ', val: 'NUD' },
-    { name: 'ยานพาหนะ (VEH)', val: 'VEH' },
-    { name: 'รังสีวิทยา (X-Ray)', val: 'xray' },
-    { name: 'รับ-ส่งผู้ป่วย (TRD)', val: 'TRD' },
-    { name: 'เวชระเบียนและเวชสถิติ', val: 'MRD' },
-    { name: 'ศูนย์จัดการยุทธศาสตร์องค์กร(SMC)', val: 'SMC' },
-    { name: 'ศูนย์พัฒนาคุณภาพองค์กร', val: 'QIC' },
-    { name: 'สิทธิประโยชน์', val: 'ADM' },
-    { name: 'รักษาความปลอดภัย', val: 'SCR' },
-    { name: 'ห้องคลอดและทารกแรกเกิด(LND) Special Unit', val: 'LND' },
-    { name: 'ห้องผ่าตัด(ORD) Special Unit', val: 'ORD' },
-    { name: 'หอผู้ป่วย VIP ชั้น 5 (IPD 5)', val: 'IPD5' },
+    { name: 'ศูนย์จัดการยุทธศาสตร์องค์กร', val: 'SMC' },
+    { name: 'การพยาบาล', val: 'NUR' },
+    { name: 'แผนกผู้ป่วยนอก(ประกันสังคม)', val: 'OPD1' },
+    { name: 'แผนกผู้ป่วยนอก(Premium)', val: 'OPD2' },
+    { name: 'แผนกอุบัติเหตุ-ฉุกเฉิน(A&E)', val: 'ARE' },
+    { name: 'แผนกรับส่งผู้ป่วย', val: 'TRD' },
+    { name: 'แผนกยานพาหนะ', val: 'VEH' },
+    { name: 'แผนกสร้างเสริมสุขภาพ (PP)', val: 'PRP' },
+    { name: 'แผนกบริการปฐมภูมิ (PCU)', val: 'PCU' },
     { name: 'หอผู้ป่วยในชั้น 2 (IPD 2)', val: 'IPD2' },
     { name: 'หอผู้ป่วยในชั้น 3 (IPD 3)', val: 'IPD3' },
     { name: 'หอผู้ป่วยในชั้น 4 (IPD 4)', val: 'IPD4' },
-    { name: 'หอผู้ป่วยหนัก (ICU) Special Unit', val: 'ICU' },
-    { name: 'อาคารสถานที่', val: 'BUD' },
-    { name: 'อุบัติเหตุ - ฉุกเฉิน (A&E)', val: 'A&E' },
+    { name: 'หอผู้ป่วยในชั้น 5 (IPD 5)', val: 'IPD5' },
+    { name: 'หอผู้ป่วยหนัก(Special Unit)', val: 'ICU' },
+    { name: 'แผนกห้องคลอดและทารกแรกเกิด (Special Unit)', val: 'LND' },
+    { name: 'แผนกห้องผ่าตัด (Special Unit)', val: 'ORD' },
+    { name: 'ศูนย์ไตเทียม', val: 'HDD' },
+    { name: 'แผนกรังสีวิทยา (X-Ray)', val: 'RAD' },
+    { name: 'แผนกเภสัชกรรม', val: 'PHA' },
+    { name: 'แผนกกายภาพบำบัด', val: 'PHY' },
+    { name: 'แผนกทันตกรรม', val: 'DEN' },
+    { name: 'แผนกโภชนาการ', val: 'NUD' },
+    { name: 'แผนกบริหารทรัพยากรทางการแพทย์', val: 'UMD' },
+    { name: 'แผนกลูกค้าประกัน/ลูกค้าสัมพันธ์', val: 'CRM' },
+    { name: 'แผนกสิทธิประโยชน์', val: 'ADM' },
+    { name: 'แผนกเวชระเบียนและเวชสถิติ', val: 'MRD' },
+    { name: 'แผนกบัญชี', val: 'ACC' },
+    { name: 'แผนกการเงิน', val: 'FIN' },
+    { name: 'แผนกเคลมเซ็นเตอร์', val: 'CLA' },
+    { name: 'แผนกตรวจสุขภาพเคลื่อนที่', val: 'MOU' },
+    { name: 'แผนกบริหารบุคลากร', val: 'HRD' },
+    { name: 'แผนกจัดซื้อ-พัสดุ', val: 'PUD' },
+    { name: 'ศูนย์คอมพิวเตอร์ (IT)', val: 'ITD' },
+    { name: 'แผนกอาคารสถานที่', val: 'HKD' },
+    { name: 'หน่วยเครื่องมือแพทย์', val: 'TEC' },
+    { name: 'แผนกซ่อมบำรุง', val: 'ENG ' },
+    { name: 'การขายและการตลาด', val: 'SAM ' },
+    { name: 'หน่วย OCC', val: 'OCC ' },
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public formbuilder: FormBuilder, private db: AngularFireDatabase) {
@@ -84,53 +85,38 @@ export class RegisterPage {
   }
 
   async register(user: User, newName: string, newPosition: string, newMobile: string) {
-    await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
-      .then(data => {
-        this.alert('Registered!');
-      })
-      .catch(error => {
-        this.alert(error.message);
-      })
+    // await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
+    //   .then(data => {
+    //     this.alert('Registered!');
+    //   })
+    //   .catch(error => {
+    //     this.alert(error.message);
+    //   })
 
     // Log chekc User email
       // console.log("Email:",this.user.email);
 
-    this.now = moment(this.startdate, "YYYYMMDD").fromNow();
-    if(this.now >= '1 days ago' && this.now <= '31 days ago'){
-      this.employeeType = 'new';
-    }else{
-      this.employeeType = 'old';
-    }
-    // Log check employee type
-    // console.log(this.now);
-    // console.log(this.employeeType);
+    var timeDiff = Math.abs(Date.now() - this.startdate);
+    console.log(Date.now());
+
+    console.log("timeDiff: ", timeDiff);
+    
 
     // const itemsRef = 
-    this.db.list('employee')
-    .push({
-      name: newName,
-      position: newPosition,
-      department: this.department,
-      mobile: newMobile,
-      email: this.user.email,
-      startdate: this.startdate,
-      type: this.employeeType
-    });
+    // this.db.list('employee')
+    // .push({
+    //   name: newName,
+    //   position: newPosition,
+    //   department: this.department,
+    //   mobile: newMobile,
+    //   email: this.user.email,
+    //   startdate: this.startdate,
+    //   type: this.employeeType
+    // });
 
     // Log check add employee data to firebase
     // console.log("Email:",this.user.email,"mobile:",newMobile,"depart:",this.department,"name:",newName,"pos:",newPosition);
     
-  }
-
-  // test get&calculate employeetype
-  testdate(){
-    this.now = moment(this.startdate, "YYYYMM").fromNow();
-    if(this.now >= '1 days ago' && this.now <= '31 days ago'){
-      this.employeeType = 'new';
-    }else{
-      this.employeeType = 'old';
-    }
-  
   }
 
 }

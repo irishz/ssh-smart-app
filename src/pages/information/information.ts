@@ -5,6 +5,9 @@ import { MottoPage } from '../motto/motto';
 import { InlinkPage } from '../inlink/inlink';
 import { OutlinkPage } from '../outlink/outlink';
 import { StrategyPage } from '../strategy/strategy';
+import { PromotionPage } from '../promotion/promotion';
+import { NinePriEsbPage } from '../nine-pri-esb/nine-pri-esb';
+import { ChkpriPage } from '../chkpri/chkpri';
 
 @Component({
   selector: 'page-information',
@@ -50,4 +53,17 @@ export class InformationPage {
     this.navCtrl.push(OutlinkPage);
   }
 
+  promotion(){
+    this.navCtrl.push(PromotionPage);
+  }
+
+  training(){
+    this.navCtrl.push(NinePriEsbPage);
+  }
+
+  chkpri(){
+    this.navCtrl.push(ChkpriPage);
+  }
+
+  
 }

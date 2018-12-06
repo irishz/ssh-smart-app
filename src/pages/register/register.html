@@ -28,13 +28,17 @@
     </ion-item> -->
     <ion-item>
       <ion-label stacked text-wrap>วันที่เริ่มงาน (เดือน/ปี ค.ศ.)</ion-label>
-      <ion-datetime displayFormat="MM YYYY" min="1990-01" max="2018-12" [(ngModel)]="startdate"></ion-datetime>
+      <ion-datetime displayFormat="MM YYYY" min="1980-01" max="2018-12" [(ngModel)]="startdate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked text-wrap>now</ion-label>
+      <ion-datetime displayFormat="MM YYYY" min="1980-01" max="2018-12" [(ngModel)]="now"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label stacked>หมายเลขโทรศัพท์มือถือ</ion-label>
       <ion-input type="text" #newMobile></ion-input>
     </ion-item>
-    <form [formGroup]="formgroup">
+    <!-- <form [formGroup]="formgroup">
       <ion-item>
         <ion-label floating>อีเมล</ion-label>
         <ion-input type="email" [formControl]="formgroup.controls['email']" [(ngModel)]="user.email"></ion-input>
@@ -53,9 +57,11 @@
         <p id="err-msg" *ngIf="formgroup.controls['password'].errors && formgroup.controls['password'].dirty">*รหัสผ่านประกอบด้วยตัวอักษรหรือตัวเลขอย่างน้อย
           6 ตัวอักษร</p>
       </div>
-    </form>
+    </form> -->
   </ion-list>
-  <button ion-button full color="primary" [disabled]="!formgroup.valid" (click)="register(user,newName.value,newPosition.value,newMobile.value,department)">
+  <!-- <button ion-button full color="primary" [disabled]="!formgroup.valid" (click)="register(user,newName.value,newPosition.value,newMobile.value,department)">
+    <ion-icon name="person-add"></ion-icon> สมัครสมาชิก</button> -->
+  <button ion-button full color="primary" (click)="register(user,newName.value,newPosition.value,newMobile.value,department)">
     <ion-icon name="person-add"></ion-icon> สมัครสมาชิก</button>
 
 </ion-content>

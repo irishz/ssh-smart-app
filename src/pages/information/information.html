@@ -16,40 +16,63 @@
 
 <ion-content padding>
   <ion-list>
+    <!-- History -->
     <button ion-item (click)="goHistory()">
       <p>ประวัติโรงพยาบาลสุขสวัสดิ์</p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
     </button>
+    <!-- Motto 6 -->
     <button ion-item (click)="goMotto()">
-      <p>Motto 6 ข้อ</p>
+      <p>Motto 6 ข้อ<ion-icon name="image" item-end></ion-icon></p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
     </button>
+    <!-- Strategy -->
     <button ion-item (click)="strategy()">
-      <p>กลยุทธ์</p>
+      <p>กลยุทธ์<ion-icon name="image" item-end></ion-icon></p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
     </button>
-    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2F%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%20(%E0%B8%84.%E0%B8%A8.2018).pdf?alt=media&token=1077e051-c18a-49be-b13a-a0b39c287c01"
-      ion-item>
-      <p>ข้อบังคับเกี่ยวกับการทำงาน (ค.ศ.2018)</p>
+    <!-- Check Privilege -->
+    <button ion-item (click)="chkpri()">
+      <p>ตรวจสอบสิทธิการรับประทานอาหารกลางวัน<ion-icon name="image" item-end></ion-icon></p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
-    </a>
-    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2F%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99.pdf?alt=media&token=ee0c01d5-c63b-40f1-972a-4ccd6ed71cbc"
-      ion-item>
-      <p>สวัสดิการพนักงาน</p>
-      <ion-icon name="arrow-dropright" item-end></ion-icon>
-    </a>
-    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2FDoctor.pdf?alt=media&token=c4917503-1bde-4580-95b6-3f51a65d26e1"
-      ion-item>
-      <p>คู่มือ iMed สำหรับแพทย์</p>
-      <ion-icon name="arrow-dropright" item-end></ion-icon>
-    </a>
+    </button>
+    <!-- Inlink -->
     <button ion-item (click)="inlink()">
       <p>รวม Link ข้อมูลข่าวสารภายในโรงพยาบาล</p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
     </button>
+    <!-- Outlink -->
     <button ion-item (click)="outlink()">
       <p>รวม Link ข้อมูลข่าวสารภายนอกโรงพยาบาล</p>
       <ion-icon name="arrow-dropright" item-end></ion-icon>
     </button>
+    <!-- Promotion -->
+    <button ion-item (click)="promotion()">
+      <p>โปรโมชันของโรงพยาบาล</p>
+      <ion-icon name="arrow-dropright" item-end></ion-icon>
+    </button>
+    <!-- 9 Privilege & ESB -->
+    <button ion-item (click)="training()">
+      <p>อบรม 9 สิทธิ + ESB</p>
+      <ion-icon name="arrow-dropright" item-end></ion-icon>
+    </button>
+    <!-- Work rules -->
+    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2F%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%20(%E0%B8%84.%E0%B8%A8.2018).pdf?alt=media&token=1077e051-c18a-49be-b13a-a0b39c287c01"
+      ion-item>
+      <p>ข้อบังคับเกี่ยวกับการทำงาน (ค.ศ.2018)<ion-icon name="document" item-end></ion-icon></p>
+      <ion-icon name="arrow-dropright" item-end></ion-icon>
+    </a>
+    <!-- Benefits -->
+    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2F%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99.pdf?alt=media&token=ee0c01d5-c63b-40f1-972a-4ccd6ed71cbc"
+      ion-item>
+      <p>สวัสดิการพนักงาน<ion-icon name="document" item-end></ion-icon></p>
+      <ion-icon name="arrow-dropright" item-end></ion-icon>
+    </a>
+    <!-- iMed doc manual -->
+    <a href="https://firebasestorage.googleapis.com/v0/b/ssh-infor-97c07.appspot.com/o/inlink%2FDoctor.pdf?alt=media&token=c4917503-1bde-4580-95b6-3f51a65d26e1"
+      ion-item>
+      <p>คู่มือ iMed สำหรับแพทย์<ion-icon name="document" item-end></ion-icon></p>
+      <ion-icon name="arrow-dropright" item-end></ion-icon>
+    </a>
   </ion-list>
 </ion-content>
